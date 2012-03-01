@@ -67,12 +67,9 @@
      			
     </script>
     <script type="text/javascript">
-
-
-
-
         $(document).ready(function () {
-            var elant = '#tbody0';
+            var elant = "#tbody0";
+            var cid = "#tb"
             var contant = '#Country1';
             var tb = '#RolesCountry1';
             $(contant).show();
@@ -96,19 +93,21 @@
 
             $('.celpp').live('click', function () {
 
-                var cid = '#tab' + $(this).attr('id');
-                if ($(cid) != $(elant)) {
+                var ind = 0;
+                cid = "#tab" + $(this).attr('id');
+                if (cid != elant) {
                     $(cid).show();
                     $(elant).hide();
                     elant = cid;
+                    ind = 1;
                 }
 
+                if (cid == elant && ind == 0) {
+                    $(cid).hide();
+                    elant = "res";
+                }
             });
-
             getContinent();
-            //getCountry('1');
-            //getUserFromCountry('1');
-
         });
 
         function getContinent() {
