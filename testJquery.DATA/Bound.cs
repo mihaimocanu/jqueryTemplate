@@ -8,6 +8,6 @@ namespace testJquery
     public class Bound
     {
         public static string connectionString = "Data Source=(local);Initial Catalog=TestDB;Integrated Security=True";
-        //sssssss
+        
     }
 }

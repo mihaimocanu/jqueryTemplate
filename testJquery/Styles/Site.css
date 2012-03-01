@@ -179,10 +179,11 @@ div.menu ul
 div.menu ul li a, div.menu ul li a:visited
 {
     background-color:#ab2671 !important; /* #465c71;*/
-    border-bottom-left-radius:65px !important;
-    border-top-left-radius:10px !important;
-    border-bottom-right-radius:65px !important;
-    border-top-right-radius:10px !important;
+    border-bottom-left-radius:10px !important;
+    border-top-left-radius:65px !important;
+    border-bottom-right-radius:10px !important;
+    border-top-right-radius:65px !important;
+    /*fdagdasagd */
     border: 1px #4e667d solid;
     color: #dde4ec;
     display: block;
