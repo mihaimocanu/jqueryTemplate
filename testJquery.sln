@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testJquery", "testJquery\testJquery.csproj", "{5E240F42-BEAD-4C96-BB56-34C01F74CB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testJquery.INFO", "testJquery.INFO\testJquery.INFO.csproj", "{22AF04C7-94BB-4195-A0AA-53311C9F7ED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testJquery.DATA", "testJquery.DATA\testJquery.DATA.csproj", "{03C90F32-2470-4693-970C-EB7BFCAA8FC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E240F42-BEAD-4C96-BB56-34C01F74CB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E240F42-BEAD-4C96-BB56-34C01F74CB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E240F42-BEAD-4C96-BB56-34C01F74CB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E240F42-BEAD-4C96-BB56-34C01F74CB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22AF04C7-94BB-4195-A0AA-53311C9F7ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AF04C7-94BB-4195-A0AA-53311C9F7ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AF04C7-94BB-4195-A0AA-53311C9F7ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AF04C7-94BB-4195-A0AA-53311C9F7ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C90F32-2470-4693-970C-EB7BFCAA8FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C90F32-2470-4693-970C-EB7BFCAA8FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C90F32-2470-4693-970C-EB7BFCAA8FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C90F32-2470-4693-970C-EB7BFCAA8FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+D:\jquery Tempate test\testJquery\testJquery\bin\testJquery.dll
+D:\jquery Tempate test\testJquery\testJquery\bin\testJquery.pdb
+D:\jquery Tempate test\testJquery\testJquery\obj\Debug\ResolveAssemblyReference.cache
+D:\jquery Tempate test\testJquery\testJquery\obj\Debug\testJquery.dll
+D:\jquery Tempate test\testJquery\testJquery\obj\Debug\testJquery.pdb
+C:\Users\Reea106\Desktop\testJquery\testJquery\bin\testJquery.dll
+C:\Users\Reea106\Desktop\testJquery\testJquery\bin\testJquery.pdb
+C:\Users\Reea106\Desktop\testJquery\testJquery\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Reea106\Desktop\testJquery\testJquery\obj\Debug\testJquery.dll
+C:\Users\Reea106\Desktop\testJquery\testJquery\obj\Debug\testJquery.pdb
+D:\mihai\project\testJquery\testJquery\bin\testJquery.dll
+D:\mihai\project\testJquery\testJquery\bin\testJquery.pdb
+D:\mihai\project\testJquery\testJquery\obj\Debug\ResolveAssemblyReference.cache
+D:\mihai\project\testJquery\testJquery\obj\Debug\testJquery.dll
+D:\mihai\project\testJquery\testJquery\obj\Debug\testJquery.pdb
+D:\mihai\project\testJquery\testJquery\bin\testJquery.DATA.dll
+D:\mihai\project\testJquery\testJquery\bin\testJquery.INFO.dll
+D:\mihai\project\testJquery\testJquery\bin\testJquery.DATA.pdb
+D:\mihai\project\testJquery\testJquery\bin\testJquery.INFO.pdb
