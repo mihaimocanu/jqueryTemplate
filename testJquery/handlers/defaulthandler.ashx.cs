@@ -54,7 +54,16 @@ namespace testJquery.handlers
                 context.Response.ContentType = "application/json";
                 context.Response.End();
             }
-		}
+            if (context.Request.QueryString["User"] != null)
+            {
+                UserInfo usrDet = userDao.getUserbyID(Convert.ToInt32(context.Request.QueryString["User"]));
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                string jsonresult = serializer.Serialize(usrDet);
+                context.Response.Write(jsonresult);
+                context.Response.ContentType = "application/json";
+                context.Response.End();
+            }
+        }
 
 
 		public bool IsReusable

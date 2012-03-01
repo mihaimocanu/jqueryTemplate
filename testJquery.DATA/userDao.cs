@@ -85,5 +85,43 @@ namespace testJquery
 			}
 			return obj;
 		}
+        public static UserInfo getUserbyID(int usrid)
+        {
+            UserInfo obj = new UserInfo();
+            try
+            {
+                SqlConnection conn = new SqlConnection(Bound.connectionString);
+                SqlCommand command = new SqlCommand();
+                command.Connection = conn;
+                conn.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "GetUserByID";
+                command.Parameters.AddWithValue("@usrID", usrid);
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    //UserInfo x = new UserInfo();
+                    obj.UserID = Convert.ToInt32(dr["UserID"]);
+                    obj.UserName = dr["UserName"] as string;
+                    obj.UserFirstName = dr["UserFirstName"] as string;
+                    obj.UserLastName = dr["UserLastName"] as string;
+                    obj.Useremail = dr["Useremail"] as string;
+                    obj.Userimage = dr["UserimageID"] as string;
+                    obj.UsercountryID = Convert.ToInt32(dr["UsercountryID"]);
+                    //x.userType = dr["role"] as string;
+                    //obj.Add(x);
+                }
+
+                conn.Close();
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return obj;
+        }
 	}
 }
