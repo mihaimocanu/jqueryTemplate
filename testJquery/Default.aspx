@@ -44,16 +44,23 @@
                 <table id="tab${RoleID}" style="background-color:#EDFAF7;display:none;" border="1" cellspacing="0" width="580px" >
                 <tr>
                     <td><b>ID</b></td>
-					<td><b>UserName</b></td>
+					<td class="celnum"><b>UserName</b></td>
+                    <td><b>FirstName</b></td>
+                    <td><b>LastName</b></td>
+                    <td><b>email</b></td>
+                    <td><b>image</b></td>
 					<td><b>Detalii</b></td>
-
                 </tr>
                 
                 {{each users}}
                 <tr>
                     <td>${UserID}</td>
 					<td>${UserName}</td>
-					<td><a href="Detalii.aspx?usrid=${UserID}&rolename=${RoleName}" class="modifButton">Details</a></td>
+					<td>${UserFirstName}</td>
+                    <td>${UserLastName}</td>
+                    <td>${Useremail}</td>
+                    <td>${Userimage}</td>
+                    <td><a href="Detalii.aspx?usrid=${UserID}&rolename=${RoleName}" class="modifButton">Details</a></td>
                 </tr>
                 {{/each}}
                 </table>
@@ -74,7 +81,13 @@
 
         $(document).ready(function () {
             var elant = "#tbody0";
+            var ind_sort = 0;
+            var ord;
+            var ind = 0;
+            countrysel = 0;
+            //var Lst;
             var cid = "#tb"
+            var functSelect = 0;
             var contant = '#Country1';
             var tb = '#RolesCountry1';
             $(contant).show();
@@ -90,9 +103,9 @@
 
             $("#selCountry").change(function () {
                 var selindx = $(this).attr('value');
-
+                countrysel = selindx;
                 $('#tabel').children().remove().end();
-                getUserFromCountry(selindx);
+                getUserFromCountry(selindx, 0);
 
             });
 
@@ -100,6 +113,7 @@
 
                 var ind = 0;
                 cid = "#tab" + $(this).attr('id');
+                functSelect = $(this).attr('id');
                 if (cid != elant) {
                     $(cid).show();
                     $(elant).hide();
@@ -111,6 +125,22 @@
                     $(cid).hide();
                     elant = "res";
                 }
+                //sortare_nume(Lst, functSelect, 1);
+                //alert(functSelect);
+            });
+
+            $('.celnum').live('click', function () {
+                $('#tabel').children().remove().end();
+                ind_sort = ind_sort + 1;
+                if (ind_sort == 3) {
+                    ind_sort = 1;
+                }
+                //pentru sortarea la nivelul bazei de date 
+                //getUserFromCountry(countrysel, ind_sort);
+                /*var bla = "#tab" + functSelect;
+                $(bla).show();
+                alert(bla);*/
+                sortare_nume(Lst, functSelect, ind_sort);
             });
             getContinent();
         });
@@ -123,9 +153,6 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (lstContinent) {
-
-
-
                     $("#SelectContTemplate").tmpl(lstContinent).appendTo("#selContinent");
                 },
                 complete: function (lstContinent) {
@@ -155,16 +182,18 @@
                 }
             });
         }
-        function getUserFromCountry(contid) {
+        function getUserFromCountry(contid, ord) {
             $.ajax({
                 type: "GET",
                 url: '../handlers/defaulthandler.ashx',
-                data: { 'CountryUser': contid },
+                data: { 'CountryUser': contid ,
+                'Order':ord},
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (UsrLst) {
-
-                    $("#RoleTemplate").tmpl(UsrLst).appendTo("#tabel");
+                    Lst = UsrLst;
+                    $("#RoleTemplate").tmpl(Lst).appendTo("#tabel");
+                    //sortare_nume(Lst);
                 },
                 complete: function (UsrLst) {
 
@@ -173,6 +202,40 @@
                     var x = textStatus;
                 }
             });
+            
         }
+        function sortare_nume(LstUser,ind_functie,ind_ord){
+            if (ind_ord == 1) {
+                //sortare ascendenta
+                for (var i = 0; i < LstUser[ind_functie - 1].users.length - 1; i++) {
+                    for (var j = i + 1; j < LstUser[ind_functie - 1].users.length; j++)
+                        if (LstUser[ind_functie - 1].users[i].UserName > LstUser[ind_functie - 1].users[j].UserName) {
+                            var aux = LstUser[ind_functie - 1].users[i];
+                            LstUser[ind_functie - 1].users[i] = LstUser[ind_functie - 1].users[j];
+                            LstUser[ind_functie - 1].users[j] = aux;
+                        }
+                }
+                $("#RoleTemplate").tmpl(LstUser).appendTo("#tabel");
+                cid = "#tab" + ind_functie;
+                functSelect = ind_functie;
+                $(cid).show();
+            }
+            else if (ind_ord == 2) {
+                // sortare descendenta
+                for (var i = 0; i < LstUser[ind_functie - 1].users.length - 1; i++) {
+                    for (var j = i + 1; j < LstUser[ind_functie - 1].users.length; j++)
+                        if (LstUser[ind_functie - 1].users[i].UserName < LstUser[ind_functie - 1].users[j].UserName) {
+                            var aux = LstUser[ind_functie - 1].users[i];
+                            LstUser[ind_functie - 1].users[i] = LstUser[ind_functie - 1].users[j];
+                            LstUser[ind_functie - 1].users[j] = aux;
+                        }
+                }
+                $("#RoleTemplate").tmpl(LstUser).appendTo("#tabel");
+                cid = "#tab" + ind_functie;
+                functSelect = ind_functie;
+                $(cid).show();
+            }
+        }
+
     </script>
 </asp:Content>

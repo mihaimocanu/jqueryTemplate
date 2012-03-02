@@ -37,14 +37,14 @@ namespace testJquery.handlers
             if (context.Request.QueryString["CountryUser"] != null)
             {
                 int CountryID = Convert.ToInt32(context.Request.QueryString["CountryUser"]);
+                int UsrOrd=Convert.ToInt32(context.Request.QueryString["Order"]);
                 List<RolesInfo> listofRoles = userDao.getRoles();
                 List<UserInfo> listofusers = new List<UserInfo>();
                 List<Object> UsrLst = new List<Object>();
 
                 foreach (RolesInfo role in listofRoles)
                 {
-                 listofusers = userDao.getUserbyRoleID(role.RoleID, CountryID);
-                    //string RoleID = CountryID.ToString() + role.RoleID.ToString();
+                 listofusers = userDao.getUserbyRoleID(role.RoleID, CountryID,UsrOrd);
                     UsrLst.Add(new { role.RoleName, role.RoleID, users = listofusers.Select(u => new { u.UserName, u.UserLastName, u.UserFirstName, u.Useremail, u.Userimage, u.UserID }).ToList<Object>() });
                 }
 

@@ -51,19 +51,7 @@
          });
  
     </script>
-    <script type="text/javascript">
-
-    // Loop over the URL values that we collected.
-    for (var strKey in objURL) {
-
-        // Output the key to the document.
-        //document.write("<strong>" + strKey + ":</strong> ");
-
-        // Output the value stored at that key.
-        //document.write(objURL[strKey] + "<br />");
-    }
- 
-    </script>
+    
     <script type="text/javascript">
         $(document).ready(function () {
             getdetails(objURL["usrid"]);

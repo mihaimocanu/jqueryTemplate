@@ -10,7 +10,7 @@ namespace testJquery
 {
 	public class userDao:Base
 	{
-		public static List<UserInfo> getUserbyRoleID(int roleid,int cntrid)
+		public static List<UserInfo> getUserbyRoleID(int roleid,int cntrid,int ord)
 		{
 			List<UserInfo> obj = new List<UserInfo>();
 			try
@@ -20,11 +20,10 @@ namespace testJquery
 				command.Connection = conn;
 				conn.Open();
 				command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "GetUserByRC";
+                command.CommandText = "GetUserOrd";
                 command.Parameters.AddWithValue("@usrType", roleid);
-
                 command.Parameters.AddWithValue("@countrID", cntrid);
-
+                command.Parameters.AddWithValue("@ord", ord);
 				//command.Parameters.Add(p1);
 				SqlDataReader dr = command.ExecuteReader();
 
