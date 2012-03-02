@@ -45,20 +45,15 @@
                 <tr>
                     <td><b>ID</b></td>
 					<td><b>UserName</b></td>
-					<td><b>FirstName</b></td>
-					<td><b>LastName</b></td>
-					<td><b>email</b></td>
-					<td><b>image</b></td>
+					<td><b>Detalii</b></td>
+
                 </tr>
                 
                 {{each users}}
                 <tr>
                     <td>${UserID}</td>
 					<td>${UserName}</td>
-					<td>${UserFirstName}</td>
-					<td>${UserLastName}</td>
-					<td>${Useremail}</td>
-					<td>${Userimage}</td>
+					<td><a href="Detalii.aspx?usrid=${UserID}&rolename=${RoleName}" class="modifButton">Details</a></td>
                 </tr>
                 {{/each}}
                 </table>
@@ -67,6 +62,16 @@
      			
     </script>
     <script type="text/javascript">
+        /*<td><b>FirstName</b></td>
+        <td><b>LastName</b></td>
+        <td><b>email</b></td>
+        <td><b>image</b></td>*/
+
+        /*<td>${UserFirstName}</td>
+        <td>${UserLastName}</td>
+        <td>${Useremail}</td>
+        <td>${Userimage}</td>*/
+
         $(document).ready(function () {
             var elant = "#tbody0";
             var cid = "#tb"

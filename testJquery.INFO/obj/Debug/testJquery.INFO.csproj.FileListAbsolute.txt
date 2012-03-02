@@ -3,3 +3,8 @@ D:\mihai\project\testJquery\testJquery.INFO\bin\Debug\testJquery.INFO.pdb
 D:\mihai\project\testJquery\testJquery.INFO\obj\Debug\ResolveAssemblyReference.cache
 D:\mihai\project\testJquery\testJquery.INFO\obj\Debug\testJquery.INFO.dll
 D:\mihai\project\testJquery\testJquery.INFO\obj\Debug\testJquery.INFO.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery.INFO\bin\Debug\testJquery.INFO.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery.INFO\bin\Debug\testJquery.INFO.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery.INFO\obj\Debug\ResolveAssemblyReference.cache
+D:\mihai\project\hh\jqueryTemplate\testJquery.INFO\obj\Debug\testJquery.INFO.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery.INFO\obj\Debug\testJquery.INFO.pdb

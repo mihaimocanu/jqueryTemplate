@@ -5,3 +5,10 @@ D:\mihai\project\testJquery\testJquery.DATA\bin\Debug\testJquery.INFO.dll
 D:\mihai\project\testJquery\testJquery.DATA\bin\Debug\testJquery.INFO.pdb
 D:\mihai\project\testJquery\testJquery.DATA\obj\Debug\testJquery.DATA.dll
 D:\mihai\project\testJquery\testJquery.DATA\obj\Debug\testJquery.DATA.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\bin\Debug\testJquery.DATA.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\bin\Debug\testJquery.DATA.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\bin\Debug\testJquery.INFO.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\bin\Debug\testJquery.INFO.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\obj\Debug\ResolveAssemblyReference.cache
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\obj\Debug\testJquery.DATA.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery.DATA\obj\Debug\testJquery.DATA.pdb

@@ -17,3 +17,12 @@ D:\mihai\project\testJquery\testJquery\bin\testJquery.DATA.dll
 D:\mihai\project\testJquery\testJquery\bin\testJquery.INFO.dll
 D:\mihai\project\testJquery\testJquery\bin\testJquery.DATA.pdb
 D:\mihai\project\testJquery\testJquery\bin\testJquery.INFO.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.DATA.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.INFO.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.DATA.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery\bin\testJquery.INFO.pdb
+D:\mihai\project\hh\jqueryTemplate\testJquery\obj\Debug\ResolveAssemblyReference.cache
+D:\mihai\project\hh\jqueryTemplate\testJquery\obj\Debug\testJquery.dll
+D:\mihai\project\hh\jqueryTemplate\testJquery\obj\Debug\testJquery.pdb
