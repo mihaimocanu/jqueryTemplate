@@ -183,6 +183,9 @@ div.menu ul li a, div.menu ul li a:visited
     border-top-left-radius:65px !important;
     border-bottom-right-radius:10px !important;
     border-top-right-radius:65px !important;
+    -moz-box-shadow:inset 0 0 4px #000000 !important;
+    -webkit-box-shadow:inset 0 0 4px #000000 !important;
+    box-shadow:inset 0 0 4px #000000 !important;
     /*fdagdasagd+ */
     border: 1px #4e667d solid;
     color: #dde4ec;
@@ -314,3 +317,61 @@ div.accountInfo
 }
 
 #usercontainers {text-align:center;}
+#headtab
+{
+    background-color:#acd4cb;
+    
+}
+.headtabcls
+{
+    -moz-box-shadow:inset 0 0 2px #000000 !important;
+    -webkit-box-shadow:inset 0 0 2px #000000 !important;
+    box-shadow:inset 0 0 2px #000000 !important;
+    
+    
+    
+}
+.arrow_none
+{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-image: url(pics/arrow.jpg);
+    background-position: 0px -24px;
+    float:left !important;
+    margin-right:5px !important;
+    margin-left:2px !important;
+    margin-top:3px !important;
+}
+.arrow_asc
+{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-image: url(pics/arrow.jpg);
+    background-position: 0px 0px;
+    float:left !important;
+    margin-right:5px !important;
+    margin-left:2px !important;
+    margin-top:3px !important;
+}
+.arrow_desc
+{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-image: url(pics/arrow.jpg);
+    background-position: 0px -12px;
+    float:left !important;
+    margin-right:5px !important;
+    margin-left:2px !important;
+    margin-top:3px !important;
+}
+/*#pic_ord
+{
+    -webkit-overflow:hidden !important;
+    overflow:hidden !important;
+    -webkit-cursor: pointer !important;
+    cursor: pointer !important;
+    background-image: url("../../pics/arrow.gif") !imporatant;
+}*/

@@ -10,8 +10,7 @@
         </select>
         <select id="selCountry">
             <option selected value="0">Select here</option>
-        </select>
-        <table id="tabel" border="1" rules="none" cellspacing="0" width="600px">
+        </select>&nbsp;<table id="tabel" border="1" rules="none" cellspacing="0" width="600px">
         </table>
     </div>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.4.js"></script>
@@ -42,14 +41,14 @@
         <td colspan="1" id="tb${RoleID}">
             
                 <table id="tab${RoleID}" style="background-color:#EDFAF7;display:none;" border="1" cellspacing="0" width="580px" >
-                <tr>
-                    <td><b>ID</b></td>
-					<td class="celnum"><b>UserName</b></td>
-                    <td><b>FirstName</b></td>
-                    <td><b>LastName</b></td>
-                    <td><b>email</b></td>
-                    <td><b>image</b></td>
-					<td><b>Detalii</b></td>
+                <tr id="headtab">
+                    <td class="headtabcls"><b>ID</b></td>
+					<td id='bla' class="celnum headtabcls"><span id="pic_ord" class="arrow_none"></span><b>UserName</b> </td>
+                    <td class="headtabcls"><b>FirstName</b></td>
+                    <td class="headtabcls"><b>LastName</b></td>
+                    <td class="headtabcls"><b>email</b></td>
+                    <td class="headtabcls"><b>image</b></td>
+					<td class="headtabcls"><b>Detalii</b></td>
                 </tr>
                 
                 {{each users}}
@@ -87,7 +86,7 @@
             countrysel = 0;
             //var Lst;
             var cid = "#tb"
-            var functSelect = 0;
+            var functSelect = 1;
             var contant = '#Country1';
             var tb = '#RolesCountry1';
             $(contant).show();
@@ -106,6 +105,10 @@
                 countrysel = selindx;
                 $('#tabel').children().remove().end();
                 getUserFromCountry(selindx, 0);
+
+                //$("#RoleTemplate").tmpl(Lst).appendTo("#tabel");
+
+
 
             });
 
@@ -135,15 +138,10 @@
                 if (ind_sort == 3) {
                     ind_sort = 0;
                 }
-                //pentru sortarea la nivelul bazei de date 
-                $(functSelect).hide();
+                //alert(ind_sort);
                 elant = "#tbody0";
                 getUserFromCountry(countrysel, ind_sort);
-                //var bla = "#tb" + functSelect;
-                //alert(functSelect);
-                $(functSelect).show();
-                //alert(bla);
-                //sortare_nume(Lst, functSelect, ind_sort);
+
             });
             getContinent();
         });
@@ -189,14 +187,15 @@
             $.ajax({
                 type: "GET",
                 url: '../handlers/defaulthandler.ashx',
-                data: { 'CountryUser': contid ,
-                'Order':ord},
+                data: { 'CountryUser': contid,
+                    'Order': ord
+                },
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (UsrLst) {
                     Lst = UsrLst;
-                    $("#RoleTemplate").tmpl(Lst).appendTo("#tabel");
-                    //sortare_nume(Lst);
+                    afisare(Lst, ord);
+                    
                 },
                 complete: function (UsrLst) {
 
@@ -238,6 +237,23 @@
                 functSelect = ind_functie;
                 $(cid).show();
             }
+        }
+        function afisare(LstUser, ind_ord) {
+            $("#RoleTemplate").tmpl(LstUser).appendTo("#tabel");
+            
+            if (ind_ord == 1) {
+                $("#pic_ord").addClass("arrow_asc");
+                $("#pic_ord").removeClass("arrow_none");
+            }
+            if (ind_ord == 2) {
+                $("#pic_ord").addClass("arrow_desc");
+                $("#pic_ord").removeClass("arrow_asc");
+            }
+            if (ind_ord == 0) {
+                $("#pic_ord").addClass("arrow_none");
+                $("#pic_ord").removeClass("arrow_desc");
+            }
+            
         }
 
     </script>
