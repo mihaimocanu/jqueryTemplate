@@ -44,8 +44,22 @@ namespace testJquery.handlers
 
                 foreach (RolesInfo role in listofRoles)
                 {
-                 listofusers = userDao.getUserbyRoleID(role.RoleID, CountryID,UsrOrd);
-                    UsrLst.Add(new { role.RoleName, role.RoleID, users = listofusers.Select(u => new { u.UserName, u.UserLastName, u.UserFirstName, u.Useremail, u.Userimage, u.UserID }).ToList<Object>() });
+                    //listofusers = userDao.getUserbyRoleID(role.RoleID, CountryID,UsrOrd);
+                    listofusers = userDao.getUserbyRoleIDUnsort(role.RoleID, CountryID);
+                    if (UsrOrd == 0)
+                    {
+                        UsrLst.Add(new { role.RoleName, role.RoleID, users = from usr in listofusers select usr });
+                    }
+                    if (UsrOrd == 1)
+                    {
+                        UsrLst.Add(new { role.RoleName, role.RoleID, users = from usr in listofusers orderby usr.UserName ascending select usr });
+                    }
+                    if (UsrOrd == 2)
+                    {
+                        UsrLst.Add(new { role.RoleName, role.RoleID, users = from usr in listofusers orderby usr.UserName descending select usr });
+                    }
+                    //UsrLst.Add(new { role.RoleName, role.RoleID, users = listofusers.Select(u => new { u.UserName, u.UserLastName, u.UserFirstName, u.Useremail, u.Userimage, u.UserID }).ToList<Object>()from });
+                      
                 }
 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();

@@ -39,7 +39,7 @@
           
         </div></tr>
         <tr>
-        <td colspan="1">
+        <td colspan="1" id="tb${RoleID}">
             
                 <table id="tab${RoleID}" style="background-color:#EDFAF7;display:none;" border="1" cellspacing="0" width="580px" >
                 <tr>
@@ -113,7 +113,7 @@
 
                 var ind = 0;
                 cid = "#tab" + $(this).attr('id');
-                functSelect = $(this).attr('id');
+                functSelect = cid;
                 if (cid != elant) {
                     $(cid).show();
                     $(elant).hide();
@@ -133,14 +133,17 @@
                 $('#tabel').children().remove().end();
                 ind_sort = ind_sort + 1;
                 if (ind_sort == 3) {
-                    ind_sort = 1;
+                    ind_sort = 0;
                 }
                 //pentru sortarea la nivelul bazei de date 
-                //getUserFromCountry(countrysel, ind_sort);
-                /*var bla = "#tab" + functSelect;
-                $(bla).show();
-                alert(bla);*/
-                sortare_nume(Lst, functSelect, ind_sort);
+                $(functSelect).hide();
+                elant = "#tbody0";
+                getUserFromCountry(countrysel, ind_sort);
+                //var bla = "#tb" + functSelect;
+                //alert(functSelect);
+                $(functSelect).show();
+                //alert(bla);
+                //sortare_nume(Lst, functSelect, ind_sort);
             });
             getContinent();
         });
